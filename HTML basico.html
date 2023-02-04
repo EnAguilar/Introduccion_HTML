@@ -1,0 +1,131 @@
+<!DOCTYPE html> <!-- La declaración no es una etiqueta HTML. Es una "información" para el navegador sobre qué tipo 
+                    de documento esperar en este caso es HTML5.-->
+
+<html lang="es"> <!--La etiqueta <html> representa la raíz de un documento HTML, es el contenedor de todos los demás elementos 
+        HTML (excepto la etiqueta <!DOCTYPE>).
+        
+        Siempre debe incluir el atributo lang dentro de la etiqueta <html>, para declarar el idioma de la página web. 
+        Esto está destinado a ayudar a los motores de búsqueda y navegadores.--->
+
+<head> <!--esta etiqueta inicia el encabezado de nuestra pagina web.
+            El elemento <head> es un contenedor de metadatos (datos sobre datos) y se coloca entre la etiqueta <html> 
+            y la etiqueta <body>.
+
+            Los metadatos son datos sobre el documento HTML. Los metadatos no se muestran.
+
+            Los metadatos suelen definir el título del documento, el conjunto de caracteres, los estilos, los scripts 
+            y otra metainformación.
+
+            Los siguientes elementos pueden ir dentro del elemento <head>:
+
+            <title> (obligatorio en todos los documentos HTML)
+            <style> (agrega información de estilo a una página)
+            <link> (enlaces a una hoja de estilo externa)
+            <meta> (define metadatos sobre un documento HTML. Los metadatos son datos (información) sobre datos)
+            <script> (se usa para incrustar un script del lado del cliente (JavaScript))
+            <noscript> (define un contenido alternativo que se mostrará 
+                        a los usuarios que tienen scripts deshabilitados en su navegador o tienen un 
+                        navegador que no admite scripts.)
+        --> 
+ 
+    <title> Mi Primera Pagina </title> <!--esta etiqueta sirve para agregar un titulo a nuestra pagina web --> 
+    
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- Conjunto de etiquetas que se comunica tanto con el navegador web como con los motores de búsqueda 
+        para proporcionar información valiosa sobre su página-->
+
+    
+    <meta name="author" content="Pedro Aguilar"> <!-- Describe el nombre del autor-->
+
+    <meta name="keywords" content="HTML, CSS, JavaScript"> <!-- Definir palabras clave para motores de búsqueda-->
+
+    <meta name="description" content="Pagina para aprender HTML"/>
+    <!-- Destinado principalmente a los motores de búsqueda.
+        Se conoce como la descripción del meta nombre, la descripción es seguida por el contenido.
+        
+        Es este fragmento de información debajo del enlace de un resultado de búsqueda, 
+        la descripción describe el contenido de la página para el buscador.
+    
+        El objetivo de la descripción es persuadir al buscador para que haga clic en su sitio web.
+
+        Si no se proporciona una meta descripción.
+
+        El motor de búsqueda generará automáticamente uno basado en el contenido de su página.-->
+
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
+    <!--El siguiente MEDITECH indica los juegos de caracteres de la página.
+
+        En esta etiqueta, los caracteres que se utilizan son UTF-8.
+
+        La explicación de por qué el carácter UTF-9 se usa entre otras alternativas es bastante técnica 
+        para mantener las cosas menos confusas, hemos incluido algunos enlaces para leer más sobre conjuntos 
+        de caracteres.-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--viewport define el área visible de los usuarios de una página web.
+
+        viewport varía según el dispositivo y será más pequeña en un teléfono móvil que en la pantalla de una computadora.
+
+        Viewport Meditech le da al navegador instrucciones sobre cómo controlar las dimensiones de las páginas en la escala.
+
+        El width=device-width.Establece el ancho de la página para seguir el ancho de la pantalla del dispositivo, que 
+        variará según el dispositivo.
+
+        initial-scale=1, establezca el nivel de zoom inicial cuando el navegador carga la página por primera vez.-->
+
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+    
+    <!--El código que se incluye dentro de las etiquetas de style se conoce como reglas de estilo y definen lo que 
+        se conoce como hoja de estilo en cascada o éxito de las páginas.
+
+        La hoja de estilo se puede utilizar para definir el formato de casi cualquier elemento dentro de su documento HTML.
+
+        Se puede usar para formatear cualquier cosa, desde fuentes, interlineado, color de fuente, bordes de tablas, 
+        opacidad de imágenes y efectos de hipervínculo.-->
+
+    <style type="text/css">
+        Body {
+            color: green;
+        }
+
+    </style>
+
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+    
+    <!--El siguiente bloque de código que vemos es una función de JavaScript.
+
+        Recuerde que JavaScript nos permite crear efectos interactivos dentro de los navegadores Web.
+
+        La toma principal contiene las funciones de JavaScript que se utilizarán en el cuerpo de nuestro documento HTML.
+
+        Hemos incluido una función básica de JavaScript que se utilizará para convertir la entrada de texto del usuario de minúsculas a mayúsculas.
+
+        Veremos la función de JavaScript en acción cuando pasemos a la sección del cuerpo de este documento HTML.
+    
+        Los usos comunes de JavaScript son la manipulación de imágenes, la validación de formularios y los cambios dinámicos de contenido.-->
+
+    <script>
+        function FuncionMayus() {
+            var x = document.getElementById("texts");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+    <noscript>Su buscador no soporta JavaScript!</noscript>
+
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <link rel="stylesheet" href="styles.css"> <!--Apunta la hoja de estilos a un archivo externo-->
+
+</head>
+
+<!--La etiqueta <body> contiene el contenido, que es visible dentro del área de contenido de su navegador web.
+    Contiene cosas como texto, hipervínculos, imágenes, tablas, listas y cualquier otro elemento visible.
+-->
+<body>
+<p>Mi primer documento HTML.</p>
+<p>Esta funcion convierte el texto de minusculas a Mayusculas:</p>
+<p>Ingrese el texto: <input type="text" id="texts" onchange="FuncionMayus()"></p>
+
+</body>
+
+</html>
